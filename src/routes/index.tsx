@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import svcContractor from "@/assets/service-contractor.jpg";
 import svcRetail from "@/assets/service-retail.jpg";
@@ -31,18 +32,25 @@ const services = [
     title: "Jasa Kontraktor & Desain Arsitektur",
     desc: "Layanan menyeluruh dari perencanaan, desain arsitektur, hingga pelaksanaan konstruksi bangunan rumah tinggal, komersial, dan industri dengan standar mutu tinggi.",
     img: svcContractor,
+    waMsg: "Halo, saya tertarik dengan layanan Jasa Kontraktor & Desain Arsitektur.",
   },
   {
     title: "Toko Retail Material Bangunan",
     desc: "Menyediakan beragam kebutuhan alat dan material bangunan lengkap dengan harga kompetitif, kualitas terjamin, dan layanan pengiriman cepat.",
     img: svcRetail,
+    waMsg: "Halo, saya ingin menanyakan ketersediaan material bangunan.",
   },
   {
     title: "Layanan Sosial — Ambulance & Pemakaman",
     desc: "Pengurusan jenazah dengan penyediaan ambulance siaga 24 jam dan Taman Pemakaman Umum yang asri sebagai bentuk kepedulian sosial perusahaan.",
     img: svcSocial,
+    waMsg: "Halo, saya membutuhkan informasi layanan Ambulance & Pemakaman.",
   },
 ];
+
+const WA_NUMBER = "6281234567890";
+const waLink = (msg: string) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
 const portfolio = [
   { img: portfolio1, title: "Rumah Tinggal Modern", category: "Residensial" },
