@@ -180,6 +180,14 @@ function Index() {
                   <span className="text-xs font-bold text-accent">0{i + 1}</span>
                   <h3 className="mt-2 text-lg font-bold leading-snug">{s.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <a
+                    href={waLink(s.waMsg)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  >
+                    <MessageCircle size={16} /> Chat WhatsApp
+                  </a>
                 </div>
               </article>
             ))}
