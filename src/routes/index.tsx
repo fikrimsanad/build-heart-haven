@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { MessageCircle, X } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import svcContractor from "@/assets/service-contractor.jpg";
 import svcRetail from "@/assets/service-retail.jpg";
@@ -33,18 +34,21 @@ const services = [
     desc: "Layanan menyeluruh dari perencanaan, desain arsitektur, hingga pelaksanaan konstruksi bangunan rumah tinggal, komersial, dan industri dengan standar mutu tinggi.",
     img: svcContractor,
     waMsg: "Halo, saya tertarik dengan layanan Jasa Kontraktor & Desain Arsitektur.",
+    detail: "Jasa konsultasi kegiatan pembangunan dan desain bangunan maupun interior. Tim arsitek dan kontraktor kami mendampingi mulai dari konsep awal, perencanaan teknis, perhitungan RAB, hingga pelaksanaan dan pengawasan di lapangan. Cocok untuk proyek hunian, komersial, maupun renovasi interior.",
   },
   {
     title: "Toko Retail Material Bangunan",
     desc: "Menyediakan beragam kebutuhan alat dan material bangunan lengkap dengan harga kompetitif, kualitas terjamin, dan layanan pengiriman cepat.",
     img: svcRetail,
     waMsg: "Halo, saya ingin menanyakan ketersediaan material bangunan.",
+    detail: "Informasi mengenai pelayanan pengadaan barang kebutuhan bangunan dengan berbagai macam produk terbaik yang dimiliki. Mulai dari semen, besi, keramik, cat, perkakas, hingga material finishing — tersedia dalam berbagai merk pilihan dengan harga kompetitif dan layanan pengiriman ke lokasi proyek Anda.",
   },
   {
     title: "Layanan Sosial — Ambulance & Pemakaman",
     desc: "Pengurusan jenazah dengan penyediaan ambulance siaga 24 jam dan Taman Pemakaman Umum yang asri sebagai bentuk kepedulian sosial perusahaan.",
     img: svcSocial,
     waMsg: "Halo, saya membutuhkan informasi layanan Ambulance & Pemakaman.",
+    detail: "Informasi mengenai layanan sosial kepengurusan jenazah secara Islami dan sunnah. Meliputi penyediaan ambulance siaga 24 jam, pemandian dan pengkafanan, pengantaran ke lokasi pemakaman, serta tersedia lahan Taman Pemakaman Umum yang asri dan terawat sebagai wujud kepedulian sosial perusahaan kepada masyarakat.",
   },
 ];
 
@@ -59,6 +63,8 @@ const portfolio = [
 ];
 
 function Index() {
+  const [activeService, setActiveService] = useState<number | null>(null);
+  const active = activeService !== null ? services[activeService] : null;
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -165,7 +171,11 @@ function Index() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {services.map((s, i) => (
-              <article key={s.title} className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg">
+              <article
+                key={s.title}
+                onClick={() => setActiveService(i)}
+                className="group cursor-pointer overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg"
+              >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={s.img}
@@ -180,20 +190,68 @@ function Index() {
                   <span className="text-xs font-bold text-accent">0{i + 1}</span>
                   <h3 className="mt-2 text-lg font-bold leading-snug">{s.title}</h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                  <a
-                    href={waLink(s.waMsg)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                  >
-                    <MessageCircle size={16} /> Chat WhatsApp
-                  </a>
+                  <div className="mt-5 flex flex-wrap items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setActiveService(i); }}
+                      className="rounded-md border border-border bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-secondary"
+                    >
+                      Selengkapnya
+                    </button>
+                    <a
+                      href={waLink(s.waMsg)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    >
+                      <MessageCircle size={16} /> WhatsApp
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Service detail modal */}
+      {active && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+          onClick={() => setActiveService(null)}
+        >
+          <div
+            className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-card shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveService(null)}
+              aria-label="Tutup"
+              className="absolute right-3 top-3 z-10 grid h-9 w-9 place-items-center rounded-full bg-black/40 text-white backdrop-blur transition-colors hover:bg-black/60"
+            >
+              <X size={18} />
+            </button>
+            <div className="aspect-[16/9] overflow-hidden">
+              <img src={active.img} alt={active.title} className="h-full w-full object-cover" />
+            </div>
+            <div className="p-6 sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent">Detail Layanan</p>
+              <h3 className="mt-2 text-2xl font-black leading-tight">{active.title}</h3>
+              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{active.detail}</p>
+              <a
+                href={waLink(active.waMsg)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              >
+                <MessageCircle size={18} /> Konsultasi via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Portofolio */}
       <section id="portofolio" className="mx-auto max-w-6xl px-4 py-20 sm:py-24">
