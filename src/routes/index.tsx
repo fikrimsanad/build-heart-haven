@@ -278,9 +278,22 @@ function Index() {
                 <span className="font-medium">Pesan</span>
                 <textarea required rows={4} className="rounded-md border border-white/20 bg-white/10 px-3 py-2.5 text-sm outline-none placeholder:text-white/50 focus:border-accent" placeholder="Ceritakan kebutuhan Anda..." />
               </label>
-              <button type="submit" className="mt-2 rounded-md bg-accent px-5 py-3 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90">
-                Kirim Pesan
-              </button>
+              <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                <button
+                  type="submit"
+                  className="flex-1 rounded-md bg-accent px-5 py-3 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90"
+                >
+                  Kirim Pesan
+                </button>
+                <a
+                  href={waLink("Halo, saya ingin berkonsultasi mengenai layanan Karya Bangun Sejahtera.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                >
+                  <MessageCircle size={18} /> Chat WhatsApp
+                </a>
+              </div>
             </div>
           </form>
         </div>
