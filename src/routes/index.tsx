@@ -72,11 +72,9 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-primary-foreground font-black">
-              KBS
-            </span>
-            <span className="hidden text-sm font-bold tracking-wide sm:block">
-              Karya Bangun Sejahtera
+            <img src={logoAsset.url} alt="AbahSinergi" className="h-10 w-auto" />
+            <span className="hidden text-sm font-bold tracking-wide text-primary sm:block">
+              AbahSinergi <span className="text-muted-foreground font-medium">Holding Company</span>
             </span>
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
@@ -99,18 +97,19 @@ function Index() {
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="Tim kontraktor di lokasi proyek" width={1920} height={1080} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/70 to-primary/30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-accent/60" />
         </div>
         <div className="relative mx-auto grid max-w-6xl gap-6 px-4 py-24 text-primary-foreground sm:py-32 md:py-40">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Sejak 2005
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> AbahSinergi Holding Company
           </span>
           <h1 className="max-w-3xl text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
-            Membangun dengan Integritas, Melayani dengan Hati.
+            Sinergi Membangun, Melayani dengan Ketulusan.
           </h1>
           <p className="max-w-2xl text-base text-primary-foreground/85 sm:text-lg">
-            Kontraktor profesional, penyedia material bangunan lengkap, dan mitra layanan
-            sosial masyarakat — semua dalam satu perusahaan terpercaya.
+            Mari bersinergi bersama kami. Apakah Anda sedang merencanakan pembangunan,
+            mencari hunian yang nyaman, atau membutuhkan bantuan sosial? Kami hadir untuk
+            memberikan solusi yang tepat bagi Anda.
           </p>
           <div className="flex flex-wrap gap-3">
             <a href="#layanan" className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90">
@@ -129,30 +128,35 @@ function Index() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Tentang Kami</p>
             <h2 className="mt-3 text-3xl font-black sm:text-4xl">
-              Lebih dari Sekadar Membangun Gedung
+              Payung Sinergi dari Cinangka-Sawangan
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Karya Bangun Sejahtera adalah perusahaan yang bergerak di bidang konstruksi,
-              perdagangan material bangunan, dan kegiatan sosial kemasyarakatan. Kami percaya
-              setiap bangunan yang kami kerjakan harus memberi nilai jangka panjang — bagi
-              pemilik, lingkungan, dan masyarakat sekitarnya.
+              Berawal dari semangat untuk melayani kebutuhan pembangunan di wilayah
+              Cinangka-Sawangan, AbahSinergi hadir sebagai payung besar yang menyatukan
+              lini bisnis material, pengembangan properti, dan tanggung jawab sosial.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Selama bertahun-tahun kami tumbuh bersama masyarakat dengan memegang teguh
+              nilai kejujuran dan kualitas. Nama <strong className="text-foreground">"Abah"</strong> bukan sekadar identitas
+              bisnis, melainkan janji kami untuk selalu memberikan pelayanan yang dekat,
+              ramah, dan dapat diandalkan bagi setiap pelanggan, mitra, dan komunitas.
             </p>
           </div>
           <div className="grid gap-5">
             <div className="rounded-xl border border-border bg-card p-6">
               <h3 className="text-lg font-bold">Visi</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Menjadi perusahaan konstruksi terpercaya yang memberikan kontribusi nyata
-                bagi pembangunan dan kesejahteraan masyarakat.
+                Menjadi payung sinergi terpercaya yang membangun pondasi bisnis kokoh,
+                menghadirkan hunian yang nyaman, dan menebar manfaat bagi sesama.
               </p>
             </div>
             <div className="rounded-xl border border-border bg-card p-6">
               <h3 className="text-lg font-bold">Misi</h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
-                <li>• Memberikan layanan konstruksi dan desain berkualitas dengan standar profesional.</li>
-                <li>• Menyediakan material bangunan yang lengkap, berkualitas, dan terjangkau.</li>
-                <li>• Berkontribusi aktif dalam kegiatan sosial masyarakat secara berkelanjutan.</li>
-                <li>• Membangun hubungan jangka panjang yang saling menguntungkan dengan mitra.</li>
+                <li>• Menyediakan material bangunan berkualitas dengan pelayanan yang bersahabat dan dapat diandalkan.</li>
+                <li>• Mengembangkan hunian yang nyaman, fungsional, dan terjangkau bagi setiap keluarga.</li>
+                <li>• Menjalankan tanggung jawab sosial secara tulus, termasuk layanan pemakaman Muslim gratis.</li>
+                <li>• Menjunjung tinggi nilai kejujuran, kualitas, dan kedekatan dalam setiap sinergi yang kami jalin.</li>
               </ul>
             </div>
           </div>
