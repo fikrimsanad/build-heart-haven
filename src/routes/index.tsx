@@ -349,7 +349,7 @@ function Index() {
                   Kirim Pesan
                 </button>
                 <a
-                  href={waLink("Halo, saya ingin berkonsultasi mengenai layanan Karya Bangun Sejahtera.")}
+                  href={waLink("Halo, saya ingin berkonsultasi mengenai layanan AbahSinergi.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-1 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
@@ -365,8 +365,8 @@ function Index() {
       {/* Footer */}
       <footer className="border-t border-border bg-background">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Karya Bangun Sejahtera. All rights reserved.</p>
-          <p>Membangun Negeri, Melayani Sesama.</p>
+          <p>© {new Date().getFullYear()} AbahSinergi Holding Company. All rights reserved.</p>
+          <p>Sinergi Membangun, Melayani dengan Ketulusan.</p>
         </div>
       </footer>
     </div>
