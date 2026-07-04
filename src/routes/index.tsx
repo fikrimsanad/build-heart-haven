@@ -72,7 +72,7 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2">
-            <img src={logoAsset.url} alt="AbahSinergi" className="h-10 w-auto" />
+            <img src={logoAsset.url} alt="AbahSinergi" className="h-14 w-auto sm:h-16" />
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
             {navLinks.map((l) => (
