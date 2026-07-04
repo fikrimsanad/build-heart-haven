@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
+import logoAsset from "@/assets/abahsinergi-logo.asset.json";
 import svcContractor from "@/assets/service-contractor.jpg";
 import svcRetail from "@/assets/service-retail.jpg";
 import svcSocial from "@/assets/service-social.jpg";
@@ -12,10 +13,10 @@ import portfolio3 from "@/assets/portfolio-3.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Karya Bangun Sejahtera — Kontraktor, Material & Layanan Sosial" },
-      { name: "description", content: "Perusahaan kontraktor terpercaya: jasa konstruksi & desain arsitektur, toko retail material bangunan, serta layanan sosial ambulance dan taman pemakaman umum." },
-      { property: "og:title", content: "Karya Bangun Sejahtera" },
-      { property: "og:description", content: "Kontraktor & desain arsitektur, retail material bangunan, dan layanan sosial pemakaman." },
+      { title: "AbahSinergi — Sinergi Membangun, Melayani dengan Ketulusan" },
+      { name: "description", content: "AbahSinergi Holding Company: TB. Abah Material, pengembang properti & perumahan (Ruman House), serta layanan sosial pemakaman Muslim di Cinangka-Sawangan." },
+      { property: "og:title", content: "AbahSinergi Holding Company" },
+      { property: "og:description", content: "Material bangunan, properti & perumahan, dan layanan sosial dalam satu payung sinergi." },
     ],
   }),
   component: Index,
@@ -30,25 +31,25 @@ const navLinks = [
 
 const services = [
   {
-    title: "Jasa Kontraktor & Desain Arsitektur",
-    desc: "Layanan menyeluruh dari perencanaan, desain arsitektur, hingga pelaksanaan konstruksi bangunan rumah tinggal, komersial, dan industri dengan standar mutu tinggi.",
+    title: "TB. Abah Material",
+    desc: "Mitra utama pembangunan dengan bahan bangunan berkualitas tinggi, stok yang tepat, dan layanan pengiriman yang efisien serta bersahabat.",
     img: svcContractor,
-    waMsg: "Halo, saya tertarik dengan layanan Jasa Kontraktor & Desain Arsitektur.",
-    detail: "Jasa konsultasi kegiatan pembangunan dan desain bangunan maupun interior. Tim arsitek dan kontraktor kami mendampingi mulai dari konsep awal, perencanaan teknis, perhitungan RAB, hingga pelaksanaan dan pengawasan di lapangan. Cocok untuk proyek hunian, komersial, maupun renovasi interior.",
+    waMsg: "Halo, saya ingin menanyakan produk TB. Abah Material.",
+    detail: "TB. Abah Material adalah mitra utama pembangunan Anda. Kami menyediakan bahan bangunan berkualitas tinggi — mulai dari semen, besi, keramik, cat, hingga perkakas dan material finishing — dengan ketepatan stok, harga bersahabat, dan layanan pengiriman yang efisien untuk mendukung kelancaran setiap proyek pelanggan kami.",
   },
   {
-    title: "Toko Retail Material Bangunan",
-    desc: "Menyediakan beragam kebutuhan alat dan material bangunan lengkap dengan harga kompetitif, kualitas terjamin, dan layanan pengiriman cepat.",
+    title: "Properti & Perumahan — Ruman House",
+    desc: "Mengelola aset properti dan mengembangkan hunian dengan standar kenyamanan, fungsionalitas, dan estetika modern yang terjangkau untuk keluarga.",
     img: svcRetail,
-    waMsg: "Halo, saya ingin menanyakan ketersediaan material bangunan.",
-    detail: "Informasi mengenai pelayanan pengadaan barang kebutuhan bangunan dengan berbagai macam produk terbaik yang dimiliki. Mulai dari semen, besi, keramik, cat, perkakas, hingga material finishing — tersedia dalam berbagai merk pilihan dengan harga kompetitif dan layanan pengiriman ke lokasi proyek Anda.",
+    waMsg: "Halo, saya tertarik dengan hunian Ruman House.",
+    detail: "Lini Developer & Ruman House kami mengelola aset properti dan mengembangkan hunian modern dengan mengutamakan kenyamanan, fungsionalitas, dan estetika. Kami menciptakan ruang hidup yang nyaman dan terjangkau — tempat setiap keluarga dapat tumbuh dan membangun kenangan indah bersama.",
   },
   {
-    title: "Layanan Sosial — Ambulance & Pemakaman",
-    desc: "Pengurusan jenazah dengan penyediaan ambulance siaga 24 jam dan Taman Pemakaman Umum yang asri sebagai bentuk kepedulian sosial perusahaan.",
+    title: "Layanan Sosial (CSR) — Pemakaman Muslim Gratis",
+    desc: "Wujud tanggung jawab sosial kami: layanan pemakaman Muslim gratis dengan ambulance siaga dan dedikasi tulus untuk membantu warga di saat tersulit.",
     img: svcSocial,
-    waMsg: "Halo, saya membutuhkan informasi layanan Ambulance & Pemakaman.",
-    detail: "Informasi mengenai layanan sosial kepengurusan jenazah secara Islami dan sunnah. Meliputi penyediaan ambulance siaga 24 jam, pemandian dan pengkafanan, pengantaran ke lokasi pemakaman, serta tersedia lahan Taman Pemakaman Umum yang asri dan terawat sebagai wujud kepedulian sosial perusahaan kepada masyarakat.",
+    waMsg: "Assalamualaikum, saya membutuhkan bantuan layanan sosial pemakaman.",
+    detail: "Sebagai wujud tanggung jawab sosial perusahaan, AbahSinergi menyelenggarakan layanan pemakaman Muslim secara gratis — sesuai syariat dan sunnah. Meliputi ambulance siaga, pemandian dan pengkafanan, pengantaran, hingga lahan pemakaman. Diberikan dengan ketulusan sebagai bentuk dedikasi kami membantu warga di saat-saat tersulit.",
   },
 ];
 
@@ -57,9 +58,9 @@ const waLink = (msg: string) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
 const portfolio = [
-  { img: portfolio1, title: "Rumah Tinggal Modern", category: "Residensial" },
-  { img: portfolio2, title: "Gedung Perkantoran", category: "Komersial" },
-  { img: portfolio3, title: "Interior Cafe & Resto", category: "Interior" },
+  { img: portfolio1, title: "Cluster Ruman House", category: "Perumahan" },
+  { img: portfolio2, title: "TB. Abah Material — Gudang Cinangka", category: "Retail Material" },
+  { img: portfolio3, title: "Rumah Tinggal Keluarga", category: "Hunian" },
 ];
 
 function Index() {
@@ -71,11 +72,9 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-primary-foreground font-black">
-              KBS
-            </span>
-            <span className="hidden text-sm font-bold tracking-wide sm:block">
-              Karya Bangun Sejahtera
+            <img src={logoAsset.url} alt="AbahSinergi" className="h-10 w-auto" />
+            <span className="hidden text-sm font-bold tracking-wide text-primary sm:block">
+              AbahSinergi <span className="text-muted-foreground font-medium">Holding Company</span>
             </span>
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
@@ -98,18 +97,19 @@ function Index() {
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImg} alt="Tim kontraktor di lokasi proyek" width={1920} height={1080} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/70 to-primary/30" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-accent/60" />
         </div>
         <div className="relative mx-auto grid max-w-6xl gap-6 px-4 py-24 text-primary-foreground sm:py-32 md:py-40">
           <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Sejak 2005
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> AbahSinergi Holding Company
           </span>
           <h1 className="max-w-3xl text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
-            Membangun dengan Integritas, Melayani dengan Hati.
+            Sinergi Membangun, Melayani dengan Ketulusan.
           </h1>
           <p className="max-w-2xl text-base text-primary-foreground/85 sm:text-lg">
-            Kontraktor profesional, penyedia material bangunan lengkap, dan mitra layanan
-            sosial masyarakat — semua dalam satu perusahaan terpercaya.
+            Mari bersinergi bersama kami. Apakah Anda sedang merencanakan pembangunan,
+            mencari hunian yang nyaman, atau membutuhkan bantuan sosial? Kami hadir untuk
+            memberikan solusi yang tepat bagi Anda.
           </p>
           <div className="flex flex-wrap gap-3">
             <a href="#layanan" className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90">
@@ -128,30 +128,35 @@ function Index() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">Tentang Kami</p>
             <h2 className="mt-3 text-3xl font-black sm:text-4xl">
-              Lebih dari Sekadar Membangun Gedung
+              Payung Sinergi dari Cinangka-Sawangan
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed">
-              Karya Bangun Sejahtera adalah perusahaan yang bergerak di bidang konstruksi,
-              perdagangan material bangunan, dan kegiatan sosial kemasyarakatan. Kami percaya
-              setiap bangunan yang kami kerjakan harus memberi nilai jangka panjang — bagi
-              pemilik, lingkungan, dan masyarakat sekitarnya.
+              Berawal dari semangat untuk melayani kebutuhan pembangunan di wilayah
+              Cinangka-Sawangan, AbahSinergi hadir sebagai payung besar yang menyatukan
+              lini bisnis material, pengembangan properti, dan tanggung jawab sosial.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Selama bertahun-tahun kami tumbuh bersama masyarakat dengan memegang teguh
+              nilai kejujuran dan kualitas. Nama <strong className="text-foreground">"Abah"</strong> bukan sekadar identitas
+              bisnis, melainkan janji kami untuk selalu memberikan pelayanan yang dekat,
+              ramah, dan dapat diandalkan bagi setiap pelanggan, mitra, dan komunitas.
             </p>
           </div>
           <div className="grid gap-5">
             <div className="rounded-xl border border-border bg-card p-6">
               <h3 className="text-lg font-bold">Visi</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Menjadi perusahaan konstruksi terpercaya yang memberikan kontribusi nyata
-                bagi pembangunan dan kesejahteraan masyarakat.
+                Menjadi payung sinergi terpercaya yang membangun pondasi bisnis kokoh,
+                menghadirkan hunian yang nyaman, dan menebar manfaat bagi sesama.
               </p>
             </div>
             <div className="rounded-xl border border-border bg-card p-6">
               <h3 className="text-lg font-bold">Misi</h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
-                <li>• Memberikan layanan konstruksi dan desain berkualitas dengan standar profesional.</li>
-                <li>• Menyediakan material bangunan yang lengkap, berkualitas, dan terjangkau.</li>
-                <li>• Berkontribusi aktif dalam kegiatan sosial masyarakat secara berkelanjutan.</li>
-                <li>• Membangun hubungan jangka panjang yang saling menguntungkan dengan mitra.</li>
+                <li>• Menyediakan material bangunan berkualitas dengan pelayanan yang bersahabat dan dapat diandalkan.</li>
+                <li>• Mengembangkan hunian yang nyaman, fungsional, dan terjangkau bagi setiap keluarga.</li>
+                <li>• Menjalankan tanggung jawab sosial secara tulus, termasuk layanan pemakaman Muslim gratis.</li>
+                <li>• Menjunjung tinggi nilai kejujuran, kualitas, dan kedekatan dalam setiap sinergi yang kami jalin.</li>
               </ul>
             </div>
           </div>
@@ -344,7 +349,7 @@ function Index() {
                   Kirim Pesan
                 </button>
                 <a
-                  href={waLink("Halo, saya ingin berkonsultasi mengenai layanan Karya Bangun Sejahtera.")}
+                  href={waLink("Halo, saya ingin berkonsultasi mengenai layanan AbahSinergi.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-1 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
@@ -360,8 +365,8 @@ function Index() {
       {/* Footer */}
       <footer className="border-t border-border bg-background">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} Karya Bangun Sejahtera. All rights reserved.</p>
-          <p>Membangun Negeri, Melayani Sesama.</p>
+          <p>© {new Date().getFullYear()} AbahSinergi Holding Company. All rights reserved.</p>
+          <p>Sinergi Membangun, Melayani dengan Ketulusan.</p>
         </div>
       </footer>
     </div>
