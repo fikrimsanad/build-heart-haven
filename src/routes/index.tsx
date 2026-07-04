@@ -73,9 +73,6 @@ function Index() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2">
             <img src={logoAsset.url} alt="AbahSinergi" className="h-10 w-auto" />
-            <span className="hidden text-sm font-bold tracking-wide text-primary sm:block">
-              AbahSinergi <span className="text-muted-foreground font-medium">Holding Company</span>
-            </span>
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
             {navLinks.map((l) => (
