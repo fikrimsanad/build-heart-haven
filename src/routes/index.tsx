@@ -53,7 +53,7 @@ const services = [
   },
 ];
 
-const WA_NUMBER = "6281234567890";
+const WA_NUMBER = "6285715511853";
 const waLink = (msg: string) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -297,19 +297,19 @@ function Index() {
             <dl className="mt-8 space-y-4 text-sm">
               <div>
                 <dt className="font-semibold text-accent">Alamat Kantor</dt>
-                <dd className="mt-1 text-primary-foreground/80">Jl. Raya Pembangunan No. 12, Jakarta Selatan, Indonesia</dd>
+                <dd className="mt-1 text-primary-foreground/80">Jl. Abdul Wahab No.16, RT.03/RW.08, Cinangka, Kec. Sawangan, Kota Depok, Jawa Barat 16516</dd>
               </div>
               <div>
                 <dt className="font-semibold text-accent">Telepon / WhatsApp</dt>
-                <dd className="mt-1 text-primary-foreground/80">+62 812 3456 7890</dd>
+                <dd className="mt-1 text-primary-foreground/80">+62 857 1551 1853</dd>
               </div>
               <div>
                 <dt className="font-semibold text-accent">Email</dt>
-                <dd className="mt-1 text-primary-foreground/80">info@karyabangunsejahtera.co.id</dd>
+                <dd className="mt-1 text-primary-foreground/80">info@abahsinergi.co.id</dd>
               </div>
               <div>
                 <dt className="font-semibold text-accent">Ambulance Siaga 24 Jam</dt>
-                <dd className="mt-1 text-primary-foreground/80">+62 800 1111 9119</dd>
+                <dd className="mt-1 text-primary-foreground/80">+62 857 1551 1853</dd>
               </div>
             </dl>
           </div>
