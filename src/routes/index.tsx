@@ -7,6 +7,7 @@ import svcContractor from "@/assets/service-contractor.jpg";
 import svcRetail from "@/assets/service-retail.jpg";
 import svcSocial from "@/assets/service-social.jpg";
 import ambulanceSocial from "@/assets/ambulance-social.jpg.asset.json";
+import tbMaterialCover from "@/assets/tb-material-cover.jpg.asset.json";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -34,7 +35,7 @@ const services = [
   {
     title: "TB. Abah Material",
     desc: "Mitra utama pembangunan dengan bahan bangunan berkualitas tinggi, stok yang tepat, dan layanan pengiriman yang efisien serta bersahabat.",
-    img: svcContractor,
+    img: tbMaterialCover.url,
     waMsg: "Halo, saya ingin menanyakan produk TB. Abah Material.",
     detail: "TB. Abah Material adalah mitra utama pembangunan Anda. Kami menyediakan bahan bangunan berkualitas tinggi — mulai dari semen, besi, keramik, cat, hingga perkakas dan material finishing — dengan ketepatan stok, harga bersahabat, dan layanan pengiriman yang efisien untuk mendukung kelancaran setiap proyek pelanggan kami.",
   },
