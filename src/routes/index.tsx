@@ -6,6 +6,7 @@ import logoAsset from "@/assets/abahsinergi-logo.asset.json";
 import svcContractor from "@/assets/service-contractor.jpg";
 import svcRetail from "@/assets/service-retail.jpg";
 import svcSocial from "@/assets/service-social.jpg";
+import ambulanceSocial from "@/assets/ambulance-social.jpg.asset.json";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -47,7 +48,7 @@ const services = [
   {
     title: "Layanan Sosial (CSR) — Pemakaman Muslim Gratis",
     desc: "Wujud tanggung jawab sosial kami: layanan pemakaman Muslim gratis dengan ambulance siaga dan dedikasi tulus untuk membantu warga di saat tersulit.",
-    img: svcSocial,
+    img: ambulanceSocial.url,
     waMsg: "Assalamualaikum, saya membutuhkan bantuan layanan sosial pemakaman.",
     detail: "Sebagai wujud tanggung jawab sosial perusahaan, AbahSinergi menyelenggarakan layanan pemakaman Muslim secara gratis — sesuai syariat dan sunnah. Meliputi ambulance siaga, pemandian dan pengkafanan, pengantaran, hingga lahan pemakaman. Diberikan dengan ketulusan sebagai bentuk dedikasi kami membantu warga di saat-saat tersulit.",
   },
