@@ -124,10 +124,10 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
           </div>
         </Section>
         <Section title="Brand Partner">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {brandPartners.map((b) => (
-              <div key={b.name} className="flex flex-col items-center gap-2 rounded-lg border border-border bg-card p-3">
-                <img src={b.logo} alt={b.name} className="h-10 w-auto object-contain" loading="lazy" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+              <div key={b.name} className="flex flex-col items-center justify-center gap-2 rounded-lg border border-border bg-white p-3">
+                <img src={b.logo} alt={b.name} className="h-12 w-full object-contain" loading="lazy" />
                 <span className="text-center text-xs font-semibold text-foreground">{b.name}</span>
               </div>
             ))}
