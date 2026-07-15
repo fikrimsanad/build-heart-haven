@@ -355,14 +355,6 @@ function Index() {
             <a href="#layanan" className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90">
               Lihat Layanan
             </a>
-            <a
-              href={waLink("Halo, saya ingin berkonsultasi mengenai layanan AbahSinergi.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
-            >
-              <MessageCircle size={18} /> Konsultasi via WhatsApp
-            </a>
             <a href="#portofolio" className="rounded-md border border-white/30 bg-white/5 px-5 py-3 text-sm font-semibold backdrop-blur transition-colors hover:bg-white/15">
               Portofolio Kami
             </a>
@@ -481,23 +473,23 @@ function Index() {
               <img src={active.img} alt={active.title} className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-accent/60" />
               <div className="absolute inset-0 flex items-end p-6 sm:p-8">
-                <div>
+                <div className="w-full">
                   <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/80">Detail Layanan</p>
                   <h3 className="mt-1 text-2xl font-black leading-tight text-primary-foreground sm:text-3xl">{active.title}</h3>
+                  <a
+                    href={waLink(active.waMsg)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
+                  >
+                    <MessageCircle size={16} /> Konsultasi via WhatsApp
+                  </a>
                 </div>
               </div>
             </div>
             <div className="flex-1 overflow-y-auto p-6 sm:p-8">
               <p className="text-sm text-muted-foreground leading-relaxed">{active.detail}</p>
               <ServiceDetailBody kind={active.kind} />
-              <a
-                href={waLink(active.waMsg)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90"
-              >
-                <MessageCircle size={18} /> Konsultasi via WhatsApp
-              </a>
             </div>
           </div>
         </div>
