@@ -2,20 +2,20 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { MessageCircle, X, HardHat, Palette, Users, ClipboardList, ShieldCheck, Wrench, FileText, Ambulance, HeartHandshake, Package, Truck, MapPin, Camera, Boxes, Tag, Smile, BadgeCheck, MessageSquare, ClipboardCheck, Wallet, PackageCheck, Hammer, Zap, Droplets, ShowerHead, PhoneCall, Car, HandHeart, Flower2 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
-import logoAsset from "@/assets/abahsinergi-logo.asset.json";
+import logoAsset from "@/assets/abahsinergi-logo.jpg";
 import svcSocial from "@/assets/service-social.jpg";
-import ambulanceSocial from "@/assets/ambulance-social.jpg.asset.json";
-import tbMaterialCover from "@/assets/tb-material-cover.jpg.asset.json";
-import contractorConstruction from "@/assets/contractor-construction.jpg.asset.json";
-import brandMowilex from "@/assets/brands/mowilex.jpg.asset.json";
-import brandNippon from "@/assets/brands/nippon.jpg.asset.json";
-import brandWavin from "@/assets/brands/wavin.jpg.asset.json";
-import brandBroco from "@/assets/brands/broco.jpg.asset.json";
-import brandTigaRoda from "@/assets/brands/tigaroda.jpg.asset.json";
-import brandJotun from "@/assets/brands/jotun.jpg.asset.json";
-import brandSika from "@/assets/brands/sika.jpg.asset.json";
-import brandSchneider from "@/assets/brands/schneider.jpg.asset.json";
-import brandVinilon from "@/assets/brands/vinilon.jpg.asset.json";
+import ambulanceSocial from "@/assets/ambulance-social.jpg";
+import tbMaterialCover from "@/assets/tb-material-cover.jpg";
+import contractorConstruction from "@/assets/contractor-construction.jpg";
+import brandMowilex from "@/assets/brands/mowilex.jpg";
+import brandNippon from "@/assets/brands/nippon.jpg";
+import brandWavin from "@/assets/brands/wavin.jpg";
+import brandBroco from "@/assets/brands/broco.jpg";
+import brandTigaRoda from "@/assets/brands/tigaroda.jpg";
+import brandJotun from "@/assets/brands/jotun.jpg";
+import brandSika from "@/assets/brands/sika.jpg";
+import brandSchneider from "@/assets/brands/schneider.jpg";
+import brandVinilon from "@/assets/brands/vinilon.jpg";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -43,7 +43,7 @@ const services = [
   {
     title: "TB. Abah Material",
     desc: "Mitra utama pembangunan dengan bahan bangunan berkualitas tinggi, stok yang tepat, dan layanan pengiriman yang efisien serta bersahabat.",
-    img: tbMaterialCover.url,
+    img: tbMaterialCover,
     waMsg: "Halo, saya ingin menanyakan produk TB. Abah Material.",
     detail: "TB. Abah Material adalah mitra utama pembangunan Anda. Kami menyediakan bahan bangunan berkualitas tinggi — mulai dari semen, besi, keramik, cat, hingga perkakas dan material finishing — dengan ketepatan stok, harga bersahabat, dan layanan pengiriman yang efisien untuk mendukung kelancaran setiap proyek pelanggan kami.",
     kind: "material" as const,
@@ -51,7 +51,7 @@ const services = [
   {
     title: "Kontraktor & Interior Bangunan",
     desc: "Mengelola aset properti dan mengembangkan hunian dengan standar kenyamanan, fungsionalitas, dan estetika modern yang terjangkau untuk keluarga.",
-    img: contractorConstruction.url,
+    img: contractorConstruction,
     waMsg: "Halo, saya tertarik dengan layanan Kontraktor & Interior Bangunan.",
     detail: "Lini Developer & Ruman House kami mengelola aset properti dan mengembangkan hunian modern dengan mengutamakan kenyamanan, fungsionalitas, dan estetika. Kami menciptakan ruang hidup yang nyaman dan terjangkau — tempat setiap keluarga dapat tumbuh dan membangun kenangan indah bersama.",
     kind: "contractor" as const,
@@ -59,7 +59,7 @@ const services = [
   {
     title: "Layanan Sosial (CSR) — Pemakaman Muslim Gratis",
     desc: "Wujud tanggung jawab sosial kami: layanan pemakaman Muslim gratis dengan ambulance siaga dan dedikasi tulus untuk membantu warga di saat tersulit.",
-    img: ambulanceSocial.url,
+    img: ambulanceSocial,
     waMsg: "Assalamualaikum, saya membutuhkan bantuan layanan sosial pemakaman.",
     detail: "Sebagai wujud tanggung jawab sosial perusahaan, AbahSinergi menyelenggarakan layanan pemakaman Muslim secara gratis — sesuai syariat dan sunnah. Meliputi ambulance siaga, pemandian dan pengkafanan, pengantaran, hingga lahan pemakaman. Diberikan dengan ketulusan sebagai bentuk dedikasi kami membantu warga di saat-saat tersulit.",
     kind: "social" as const,
@@ -92,15 +92,15 @@ function Bullets({ items }: { items: string[] }) {
 }
 
 const brandPartners = [
-  { name: "Nippon Paint", logo: brandNippon.url },
-  { name: "Mowilex", logo: brandMowilex.url },
-  { name: "Jotun", logo: brandJotun.url },
-  { name: "Semen Tiga Roda", logo: brandTigaRoda.url },
-  { name: "Sika", logo: brandSika.url },
-  { name: "Pipa Wavin", logo: brandWavin.url },
-  { name: "Vinilon", logo: brandVinilon.url },
-  { name: "Broco", logo: brandBroco.url },
-  { name: "Schneider Electric", logo: brandSchneider.url },
+  { name: "Nippon Paint", logo: brandNippon },
+  { name: "Mowilex", logo: brandMowilex },
+  { name: "Jotun", logo: brandJotun },
+  { name: "Semen Tiga Roda", logo: brandTigaRoda },
+  { name: "Sika", logo: brandSika },
+  { name: "Pipa Wavin", logo: brandWavin },
+  { name: "Vinilon", logo: brandVinilon },
+  { name: "Broco", logo: brandBroco },
+  { name: "Schneider Electric", logo: brandSchneider },
 ];
 
 function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social" }) {
@@ -257,7 +257,7 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
               { img: portfolio1, t: "Cluster Ruman House", d: "Hunian modern siap huni." },
               { img: portfolio3, t: "Rumah Tinggal Keluarga", d: "Renovasi hunian di Sawangan." },
               { img: portfolio2, t: "Interior Komersial", d: "Ruang retail & komersial." },
-              { img: contractorConstruction.url, t: "Ruko 2 Lantai", d: "Pembangunan ruko di Cinangka." },
+              { img: contractorConstruction, t: "Ruko 2 Lantai", d: "Pembangunan ruko di Cinangka." },
             ].map((p) => (
               <div key={p.t} className="overflow-hidden rounded-lg border border-border bg-card">
                 <div className="aspect-[4/3] w-full overflow-hidden bg-secondary/30">
@@ -360,7 +360,7 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <a href="#top" className="flex items-center gap-2">
-            <img src={logoAsset.url} alt="AbahSinergi" className="h-14 w-auto sm:h-16" />
+            <img src={logoAsset} alt="AbahSinergi" className="h-14 w-auto sm:h-16" />
           </a>
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
             {navLinks.map((l) => (
