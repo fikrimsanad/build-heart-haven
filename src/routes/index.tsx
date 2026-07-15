@@ -3,11 +3,10 @@ import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import logoAsset from "@/assets/abahsinergi-logo.asset.json";
-import svcContractor from "@/assets/service-contractor.jpg";
-import svcRetail from "@/assets/service-retail.jpg";
 import svcSocial from "@/assets/service-social.jpg";
 import ambulanceSocial from "@/assets/ambulance-social.jpg.asset.json";
 import tbMaterialCover from "@/assets/tb-material-cover.jpg.asset.json";
+import contractorConstruction from "@/assets/contractor-construction.jpg.asset.json";
 import brandMowilex from "@/assets/brands/mowilex.jpg.asset.json";
 import brandNippon from "@/assets/brands/nippon.jpg.asset.json";
 import brandWavin from "@/assets/brands/wavin.jpg.asset.json";
@@ -52,7 +51,7 @@ const services = [
   {
     title: "Kontraktor & Interior Bangunan",
     desc: "Mengelola aset properti dan mengembangkan hunian dengan standar kenyamanan, fungsionalitas, dan estetika modern yang terjangkau untuk keluarga.",
-    img: svcRetail,
+    img: contractorConstruction.url,
     waMsg: "Halo, saya tertarik dengan layanan Kontraktor & Interior Bangunan.",
     detail: "Lini Developer & Ruman House kami mengelola aset properti dan mengembangkan hunian modern dengan mengutamakan kenyamanan, fungsionalitas, dan estetika. Kami menciptakan ruang hidup yang nyaman dan terjangkau — tempat setiap keluarga dapat tumbuh dan membangun kenangan indah bersama.",
     kind: "contractor" as const,
@@ -211,10 +210,8 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
             "Ambulans siaga 24 jam",
             "Pemulasaraan jenazah (sesuai syariat)",
             "Kafan",
-            "Peti jenazah (jika tersedia)",
             "Transportasi jenazah",
             "Pemakaman",
-            "Kremasi (jika memang disediakan)",
             "Pendampingan keluarga",
             "Dokumentasi administrasi",
           ]} />
@@ -419,13 +416,18 @@ function Index() {
             >
               <X size={18} />
             </button>
-            <div className="h-40 shrink-0 overflow-hidden sm:h-56">
+            <div className="relative h-48 shrink-0 overflow-hidden sm:h-64">
               <img src={active.img} alt={active.title} className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/75 to-accent/60" />
+              <div className="absolute inset-0 flex items-end p-6 sm:p-8">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/80">Detail Layanan</p>
+                  <h3 className="mt-1 text-2xl font-black leading-tight text-primary-foreground sm:text-3xl">{active.title}</h3>
+                </div>
+              </div>
             </div>
             <div className="flex-1 overflow-y-auto p-6 sm:p-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-accent">Detail Layanan</p>
-              <h3 className="mt-2 text-2xl font-black leading-tight">{active.title}</h3>
-              <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{active.detail}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{active.detail}</p>
               <ServiceDetailBody kind={active.kind} />
               <a
                 href={waLink(active.waMsg)}
