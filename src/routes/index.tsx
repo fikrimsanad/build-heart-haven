@@ -38,13 +38,15 @@ const services = [
     img: tbMaterialCover.url,
     waMsg: "Halo, saya ingin menanyakan produk TB. Abah Material.",
     detail: "TB. Abah Material adalah mitra utama pembangunan Anda. Kami menyediakan bahan bangunan berkualitas tinggi — mulai dari semen, besi, keramik, cat, hingga perkakas dan material finishing — dengan ketepatan stok, harga bersahabat, dan layanan pengiriman yang efisien untuk mendukung kelancaran setiap proyek pelanggan kami.",
+    kind: "material" as const,
   },
   {
-    title: "Properti & Perumahan — Ruman House",
+    title: "Kontraktor & Interior Bangunan",
     desc: "Mengelola aset properti dan mengembangkan hunian dengan standar kenyamanan, fungsionalitas, dan estetika modern yang terjangkau untuk keluarga.",
     img: svcRetail,
-    waMsg: "Halo, saya tertarik dengan hunian Ruman House.",
+    waMsg: "Halo, saya tertarik dengan layanan Kontraktor & Interior Bangunan.",
     detail: "Lini Developer & Ruman House kami mengelola aset properti dan mengembangkan hunian modern dengan mengutamakan kenyamanan, fungsionalitas, dan estetika. Kami menciptakan ruang hidup yang nyaman dan terjangkau — tempat setiap keluarga dapat tumbuh dan membangun kenangan indah bersama.",
+    kind: "contractor" as const,
   },
   {
     title: "Layanan Sosial (CSR) — Pemakaman Muslim Gratis",
@@ -52,6 +54,7 @@ const services = [
     img: ambulanceSocial.url,
     waMsg: "Assalamualaikum, saya membutuhkan bantuan layanan sosial pemakaman.",
     detail: "Sebagai wujud tanggung jawab sosial perusahaan, AbahSinergi menyelenggarakan layanan pemakaman Muslim secara gratis — sesuai syariat dan sunnah. Meliputi ambulance siaga, pemandian dan pengkafanan, pengantaran, hingga lahan pemakaman. Diberikan dengan ketulusan sebagai bentuk dedikasi kami membantu warga di saat-saat tersulit.",
+    kind: "social" as const,
   },
 ];
 
