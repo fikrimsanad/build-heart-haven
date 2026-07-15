@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MessageCircle, X, HardHat, Palette, Users, ClipboardList, ShieldCheck, Wrench, FileText, Ambulance, HeartHandshake, Package, Truck, MapPin, Camera } from "lucide-react";
+import { MessageCircle, X, HardHat, Palette, Users, ClipboardList, ShieldCheck, Wrench, FileText, Ambulance, HeartHandshake, Package, Truck, MapPin, Camera, Boxes, Tag, Smile, BadgeCheck, MessageSquare, ClipboardCheck, Wallet, PackageCheck } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import logoAsset from "@/assets/abahsinergi-logo.asset.json";
 import svcSocial from "@/assets/service-social.jpg";
@@ -133,21 +133,46 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
           </div>
         </Section>
         <Section title="Keunggulan Retail">
-          <Bullets items={[
-            "Stok lengkap & selalu tersedia untuk kebutuhan harian proyek.",
-            "Harga bersahabat langsung dari distributor resmi.",
-            "Pengiriman cepat ke area Cinangka-Sawangan & sekitarnya.",
-            "Pelayanan ramah dengan konsultasi kebutuhan material.",
-            "Produk original bergaransi dari brand partner terpercaya.",
-          ]} />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { Icon: Boxes, t: "Stok Lengkap", d: "Selalu tersedia untuk kebutuhan harian proyek Anda." },
+              { Icon: Tag, t: "Harga Bersahabat", d: "Langsung dari distributor resmi, hemat & pasti." },
+              { Icon: Truck, t: "Pengiriman Cepat", d: "Antar ke area Cinangka-Sawangan & sekitarnya." },
+              { Icon: Smile, t: "Pelayanan Ramah", d: "Konsultasi kebutuhan material dengan sabar." },
+              { Icon: BadgeCheck, t: "Produk Original", d: "Bergaransi dari brand partner terpercaya." },
+            ].map(({ Icon, t, d }) => (
+              <div key={t} className="flex gap-3 rounded-lg border border-border bg-secondary/30 p-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
+                  <Icon size={18} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">{t}</p>
+                  <p className="mt-0.5 text-xs">{d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </Section>
         <Section title="Cara Belanja & Lokasi Toko">
-          <ol className="list-decimal space-y-1.5 pl-5">
-            <li>Datang langsung ke toko atau hubungi via WhatsApp.</li>
-            <li>Sampaikan kebutuhan material — tim kami bantu list & estimasi harga.</li>
-            <li>Konfirmasi pesanan & metode pembayaran (tunai / transfer).</li>
-            <li>Barang diantar atau siap diambil di toko.</li>
-          </ol>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { Icon: MessageSquare, t: "Hubungi Kami", d: "Datang langsung ke toko atau chat via WhatsApp." },
+              { Icon: ClipboardCheck, t: "Sampaikan Kebutuhan", d: "Tim kami bantu list material & estimasi harga." },
+              { Icon: Wallet, t: "Konfirmasi & Bayar", d: "Metode pembayaran tunai atau transfer bank." },
+              { Icon: PackageCheck, t: "Terima Barang", d: "Diantar ke lokasi atau siap diambil di toko." },
+            ].map(({ Icon, t, d }, i) => (
+              <div key={t} className="relative flex gap-3 rounded-lg border border-border bg-secondary/30 p-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
+                  <Icon size={18} />
+                </div>
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-accent">Langkah {i + 1}</p>
+                  <p className="text-sm font-bold text-foreground">{t}</p>
+                  <p className="mt-0.5 text-xs">{d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="mt-3 rounded-lg border border-border bg-secondary/30 p-3">
             <p className="text-xs font-semibold text-foreground">Alamat Toko</p>
             <p className="mt-1 text-xs">{ADDRESS}</p>
@@ -195,12 +220,24 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
           </div>
         </Section>
         <Section title="Portofolio">
-          <Bullets items={[
-            "Cluster Ruman House — hunian modern siap huni.",
-            "Renovasi rumah tinggal keluarga di Sawangan.",
-            "Interior ruang komersial & retail.",
-            "Pembangunan ruko 2 lantai di Cinangka.",
-          ]} />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { img: portfolio1, t: "Cluster Ruman House", d: "Hunian modern siap huni." },
+              { img: portfolio3, t: "Rumah Tinggal Keluarga", d: "Renovasi hunian di Sawangan." },
+              { img: portfolio2, t: "Interior Komersial", d: "Ruang retail & komersial." },
+              { img: contractorConstruction.url, t: "Ruko 2 Lantai", d: "Pembangunan ruko di Cinangka." },
+            ].map((p) => (
+              <div key={p.t} className="overflow-hidden rounded-lg border border-border bg-card">
+                <div className="aspect-[4/3] w-full overflow-hidden bg-secondary/30">
+                  <img src={p.img} alt={p.t} loading="lazy" className="h-full w-full object-cover" />
+                </div>
+                <div className="p-3">
+                  <p className="text-sm font-bold text-foreground">{p.t}</p>
+                  <p className="mt-0.5 text-xs">{p.d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </Section>
         <Section title="Testimoni">
           <blockquote className="rounded-lg border border-border bg-card p-3 text-xs italic">
