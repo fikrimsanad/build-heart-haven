@@ -408,7 +408,7 @@ function Index() {
           onClick={() => setActiveService(null)}
         >
           <div
-            className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-card shadow-2xl"
+            className="relative flex max-h-[92vh] w-full max-w-[95vw] flex-col overflow-hidden rounded-2xl bg-card shadow-2xl sm:max-w-[80vw] lg:max-w-[55vw]"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -419,10 +419,10 @@ function Index() {
             >
               <X size={18} />
             </button>
-            <div className="aspect-[16/9] overflow-hidden">
+            <div className="h-40 shrink-0 overflow-hidden sm:h-56">
               <img src={active.img} alt={active.title} className="h-full w-full object-cover" />
             </div>
-            <div className="max-h-[75vh] overflow-y-auto p-6 sm:p-8">
+            <div className="flex-1 overflow-y-auto p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-accent">Detail Layanan</p>
               <h3 className="mt-2 text-2xl font-black leading-tight">{active.title}</h3>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{active.detail}</p>
