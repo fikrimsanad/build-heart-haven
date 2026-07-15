@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MessageCircle, X, HardHat, Palette, Users, ClipboardList, ShieldCheck, Wrench, FileText, Ambulance, HeartHandshake, Package, Truck, MapPin, Camera, Boxes, Tag, Smile, BadgeCheck, MessageSquare, ClipboardCheck, Wallet, PackageCheck } from "lucide-react";
+import { MessageCircle, X, HardHat, Palette, Users, ClipboardList, ShieldCheck, Wrench, FileText, Ambulance, HeartHandshake, Package, Truck, MapPin, Camera, Boxes, Tag, Smile, BadgeCheck, MessageSquare, ClipboardCheck, Wallet, PackageCheck, Hammer, Zap, Droplets, ShowerHead, PhoneCall, Car, HandHeart, Flower2 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import logoAsset from "@/assets/abahsinergi-logo.asset.json";
 import svcSocial from "@/assets/service-social.jpg";
@@ -110,14 +110,19 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
         <Section title="Kategori Produk">
           <div className="grid gap-3 sm:grid-cols-2">
             {[
-              { t: "Material Bahan Bangunan", d: "Semen, besi, bata, pasir, keramik, cat & finishing." },
-              { t: "Alat Kelistrikan", d: "Kabel, saklar, stop kontak, lampu, MCB, dan aksesori." },
-              { t: "Plumbing", d: "Pipa PVC, fitting, lem, kran, dan perlengkapan air bersih." },
-              { t: "Sanitary", d: "Kloset, wastafel, shower, kran, dan perlengkapan kamar mandi." },
-            ].map((c) => (
-              <div key={c.t} className="rounded-lg border border-border bg-secondary/30 p-3">
-                <p className="text-sm font-bold text-foreground">{c.t}</p>
-                <p className="mt-1 text-xs">{c.d}</p>
+              { Icon: Hammer, t: "Material Bahan Bangunan", d: "Semen, besi, bata, pasir, keramik, cat & finishing." },
+              { Icon: Zap, t: "Alat Kelistrikan", d: "Kabel, saklar, stop kontak, lampu, MCB, dan aksesori." },
+              { Icon: Droplets, t: "Plumbing", d: "Pipa PVC, fitting, lem, kran, dan perlengkapan air bersih." },
+              { Icon: ShowerHead, t: "Sanitary", d: "Kloset, wastafel, shower, kran, dan perlengkapan kamar mandi." },
+            ].map(({ Icon, t, d }) => (
+              <div key={t} className="flex gap-3 rounded-lg border border-border bg-secondary/30 p-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
+                  <Icon size={18} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">{t}</p>
+                  <p className="mt-1 text-xs">{d}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -175,9 +180,34 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
               </li>
             ))}
           </ol>
-          <div className="mt-3 rounded-lg border border-border bg-secondary/30 p-3">
-            <p className="text-xs font-semibold text-foreground">Alamat Toko</p>
-            <p className="mt-1 text-xs">{ADDRESS}</p>
+        </Section>
+        <Section title="Alamat Toko">
+          <div className="overflow-hidden rounded-lg border border-border bg-card">
+            <div className="aspect-[16/10] w-full">
+              <iframe
+                title="Lokasi TB. Abah Material"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(ADDRESS)}&output=embed`}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <div className="flex items-start gap-2 p-3">
+              <MapPin size={16} className="mt-0.5 shrink-0 text-accent" />
+              <div>
+                <p className="text-xs font-bold text-foreground">TB. Abah Material</p>
+                <p className="mt-0.5 text-xs">{ADDRESS}</p>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
+                >
+                  Buka di Google Maps →
+                </a>
+              </div>
+            </div>
           </div>
         </Section>
         <Section title="Testimoni Pelanggan">
@@ -288,12 +318,27 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
         ]} />
       </Section>
       <Section title="Alur Pelayanan">
-        <ol className="list-decimal space-y-1.5 pl-5">
-          <li>Hubungi kami via WhatsApp / telepon 24 jam.</li>
-          <li>Tim menerima informasi & langsung meluncur dengan ambulans.</li>
-          <li>Pemulasaraan jenazah sesuai syariat di lokasi/rumah duka.</li>
-          <li>Pengantaran ke lokasi pemakaman.</li>
-          <li>Pemakaman & pendampingan keluarga.</li>
+        <ol className="relative ml-2 space-y-4 border-l-2 border-dashed border-accent/40 pl-6">
+          {[
+            { Icon: PhoneCall, t: "Hubungi Kami", d: "Chat WhatsApp atau telepon kami — siaga 24 jam." },
+            { Icon: Ambulance, t: "Tim Meluncur", d: "Ambulans langsung berangkat menuju lokasi duka." },
+            { Icon: HandHeart, t: "Pemulasaraan Jenazah", d: "Dimandikan, dikafani & disholatkan sesuai syariat." },
+            { Icon: Car, t: "Pengantaran", d: "Jenazah diantar menuju lokasi pemakaman." },
+            { Icon: Flower2, t: "Pemakaman & Pendampingan", d: "Proses pemakaman & dampingan bagi keluarga." },
+          ].map(({ Icon, t, d }, i) => (
+            <li key={t} className="relative">
+              <span className="absolute -left-[34px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-accent bg-background text-[11px] font-black text-accent shadow-sm">
+                {i + 1}
+              </span>
+              <div className="rounded-lg border border-border bg-secondary/30 p-3">
+                <div className="flex items-center gap-2">
+                  <Icon size={16} className="text-accent" />
+                  <p className="text-sm font-bold text-foreground">{t}</p>
+                </div>
+                <p className="mt-1 text-xs">{d}</p>
+              </div>
+            </li>
+          ))}
         </ol>
       </Section>
     </>
