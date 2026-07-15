@@ -154,25 +154,27 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
           </div>
         </Section>
         <Section title="Cara Belanja & Lokasi Toko">
-          <div className="grid gap-3 sm:grid-cols-2">
+          <ol className="relative ml-2 space-y-4 border-l-2 border-dashed border-accent/40 pl-6">
             {[
               { Icon: MessageSquare, t: "Hubungi Kami", d: "Datang langsung ke toko atau chat via WhatsApp." },
               { Icon: ClipboardCheck, t: "Sampaikan Kebutuhan", d: "Tim kami bantu list material & estimasi harga." },
               { Icon: Wallet, t: "Konfirmasi & Bayar", d: "Metode pembayaran tunai atau transfer bank." },
               { Icon: PackageCheck, t: "Terima Barang", d: "Diantar ke lokasi atau siap diambil di toko." },
             ].map(({ Icon, t, d }, i) => (
-              <div key={t} className="relative flex gap-3 rounded-lg border border-border bg-secondary/30 p-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
-                  <Icon size={18} />
+              <li key={t} className="relative">
+                <span className="absolute -left-[34px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-accent bg-background text-[11px] font-black text-accent shadow-sm">
+                  {i + 1}
+                </span>
+                <div className="rounded-lg border border-border bg-secondary/30 p-3">
+                  <div className="flex items-center gap-2">
+                    <Icon size={16} className="text-accent" />
+                    <p className="text-sm font-bold text-foreground">{t}</p>
+                  </div>
+                  <p className="mt-1 text-xs">{d}</p>
                 </div>
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-accent">Langkah {i + 1}</p>
-                  <p className="text-sm font-bold text-foreground">{t}</p>
-                  <p className="mt-0.5 text-xs">{d}</p>
-                </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
           <div className="mt-3 rounded-lg border border-border bg-secondary/30 p-3">
             <p className="text-xs font-semibold text-foreground">Alamat Toko</p>
             <p className="mt-1 text-xs">{ADDRESS}</p>
@@ -353,6 +355,14 @@ function Index() {
             <a href="#layanan" className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90">
               Lihat Layanan
             </a>
+            <a
+              href={waLink("Halo, saya ingin berkonsultasi mengenai layanan AbahSinergi.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
+            >
+              <MessageCircle size={18} /> Konsultasi via WhatsApp
+            </a>
             <a href="#portofolio" className="rounded-md border border-white/30 bg-white/5 px-5 py-3 text-sm font-semibold backdrop-blur transition-colors hover:bg-white/15">
               Portofolio Kami
             </a>
@@ -441,15 +451,6 @@ function Index() {
                     >
                       Selengkapnya
                     </button>
-                    <a
-                      href={waLink(s.waMsg)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
-                    >
-                      <MessageCircle size={16} /> WhatsApp
-                    </a>
                   </div>
                 </div>
               </article>
