@@ -355,14 +355,6 @@ function Index() {
             <a href="#layanan" className="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90">
               Lihat Layanan
             </a>
-            <a
-              href={waLink("Halo, saya ingin berkonsultasi mengenai layanan AbahSinergi.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
-            >
-              <MessageCircle size={18} /> Konsultasi via WhatsApp
-            </a>
             <a href="#portofolio" className="rounded-md border border-white/30 bg-white/5 px-5 py-3 text-sm font-semibold backdrop-blur transition-colors hover:bg-white/15">
               Portofolio Kami
             </a>
