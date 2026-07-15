@@ -3,7 +3,6 @@ import { useState } from "react";
 import { MessageCircle, X } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import logoAsset from "@/assets/abahsinergi-logo.asset.json";
-import svcContractor from "@/assets/service-contractor.jpg";
 import svcSocial from "@/assets/service-social.jpg";
 import ambulanceSocial from "@/assets/ambulance-social.jpg.asset.json";
 import tbMaterialCover from "@/assets/tb-material-cover.jpg.asset.json";
