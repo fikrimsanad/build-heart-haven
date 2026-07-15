@@ -8,6 +8,15 @@ import svcRetail from "@/assets/service-retail.jpg";
 import svcSocial from "@/assets/service-social.jpg";
 import ambulanceSocial from "@/assets/ambulance-social.jpg.asset.json";
 import tbMaterialCover from "@/assets/tb-material-cover.jpg.asset.json";
+import brandMowilex from "@/assets/brands/mowilex.jpg.asset.json";
+import brandNippon from "@/assets/brands/nippon.jpg.asset.json";
+import brandWavin from "@/assets/brands/wavin.jpg.asset.json";
+import brandBroco from "@/assets/brands/broco.jpg.asset.json";
+import brandTigaRoda from "@/assets/brands/tigaroda.jpg.asset.json";
+import brandJotun from "@/assets/brands/jotun.jpg.asset.json";
+import brandSika from "@/assets/brands/sika.jpg.asset.json";
+import brandSchneider from "@/assets/brands/schneider.jpg.asset.json";
+import brandVinilon from "@/assets/brands/vinilon.jpg.asset.json";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -84,10 +93,15 @@ function Bullets({ items }: { items: string[] }) {
 }
 
 const brandPartners = [
-  { name: "Nippon Paint", logo: "https://logo.clearbit.com/nipponpaint.co.id" },
-  { name: "Pipa Wavin", logo: "https://logo.clearbit.com/wavin.com" },
-  { name: "Semen Tiga Roda", logo: "https://logo.clearbit.com/sementigaroda.com" },
-  { name: "Aquaproof", logo: "https://logo.clearbit.com/aquaproof.co.id" },
+  { name: "Nippon Paint", logo: brandNippon.url },
+  { name: "Mowilex", logo: brandMowilex.url },
+  { name: "Jotun", logo: brandJotun.url },
+  { name: "Semen Tiga Roda", logo: brandTigaRoda.url },
+  { name: "Sika", logo: brandSika.url },
+  { name: "Pipa Wavin", logo: brandWavin.url },
+  { name: "Vinilon", logo: brandVinilon.url },
+  { name: "Broco", logo: brandBroco.url },
+  { name: "Schneider Electric", logo: brandSchneider.url },
 ];
 
 function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social" }) {
