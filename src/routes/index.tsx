@@ -62,6 +62,171 @@ const WA_NUMBER = "6285715511853";
 const waLink = (msg: string) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
+const ADDRESS = "Jl. Abdul Wahab No.16, RT.03/RW.08, Cinangka, Kec. Sawangan, Kota Depok, Jawa Barat 16516";
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="mt-6">
+      <h4 className="text-sm font-bold uppercase tracking-wider text-primary">{title}</h4>
+      <div className="mt-2 text-sm text-muted-foreground leading-relaxed">{children}</div>
+    </div>
+  );
+}
+
+function Bullets({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-1.5">
+      {items.map((it) => (
+        <li key={it} className="flex gap-2"><span className="text-accent">•</span><span>{it}</span></li>
+      ))}
+    </ul>
+  );
+}
+
+const brandPartners = [
+  { name: "Nippon Paint", logo: "https://logo.clearbit.com/nipponpaint.co.id" },
+  { name: "Pipa Wavin", logo: "https://logo.clearbit.com/wavin.com" },
+  { name: "Semen Tiga Roda", logo: "https://logo.clearbit.com/sementigaroda.com" },
+  { name: "Aquaproof", logo: "https://logo.clearbit.com/aquaproof.co.id" },
+];
+
+function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social" }) {
+  if (kind === "material") {
+    return (
+      <>
+        <Section title="Kategori Produk">
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { t: "Material Bahan Bangunan", d: "Semen, besi, bata, pasir, keramik, cat & finishing." },
+              { t: "Alat Kelistrikan", d: "Kabel, saklar, stop kontak, lampu, MCB, dan aksesori." },
+              { t: "Plumbing", d: "Pipa PVC, fitting, lem, kran, dan perlengkapan air bersih." },
+              { t: "Sanitary", d: "Kloset, wastafel, shower, kran, dan perlengkapan kamar mandi." },
+            ].map((c) => (
+              <div key={c.t} className="rounded-lg border border-border bg-secondary/30 p-3">
+                <p className="text-sm font-bold text-foreground">{c.t}</p>
+                <p className="mt-1 text-xs">{c.d}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+        <Section title="Brand Partner">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {brandPartners.map((b) => (
+              <div key={b.name} className="flex flex-col items-center gap-2 rounded-lg border border-border bg-card p-3">
+                <img src={b.logo} alt={b.name} className="h-10 w-auto object-contain" loading="lazy" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                <span className="text-center text-xs font-semibold text-foreground">{b.name}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
+        <Section title="Keunggulan Retail">
+          <Bullets items={[
+            "Stok lengkap & selalu tersedia untuk kebutuhan harian proyek.",
+            "Harga bersahabat langsung dari distributor resmi.",
+            "Pengiriman cepat ke area Cinangka-Sawangan & sekitarnya.",
+            "Pelayanan ramah dengan konsultasi kebutuhan material.",
+            "Produk original bergaransi dari brand partner terpercaya.",
+          ]} />
+        </Section>
+        <Section title="Cara Belanja & Lokasi Toko">
+          <ol className="list-decimal space-y-1.5 pl-5">
+            <li>Datang langsung ke toko atau hubungi via WhatsApp.</li>
+            <li>Sampaikan kebutuhan material — tim kami bantu list & estimasi harga.</li>
+            <li>Konfirmasi pesanan & metode pembayaran (tunai / transfer).</li>
+            <li>Barang diantar atau siap diambil di toko.</li>
+          </ol>
+          <div className="mt-3 rounded-lg border border-border bg-secondary/30 p-3">
+            <p className="text-xs font-semibold text-foreground">Alamat Toko</p>
+            <p className="mt-1 text-xs">{ADDRESS}</p>
+          </div>
+        </Section>
+        <Section title="Testimoni Pelanggan">
+          <div className="space-y-3">
+            <blockquote className="rounded-lg border border-border bg-card p-3 text-xs italic">
+              "Materialnya lengkap, harga bersaing, dan pengiriman selalu tepat waktu. Toko andalan proyek saya."
+              <footer className="mt-2 not-italic text-[11px] font-semibold text-foreground">— Pak Rahmat, Kontraktor</footer>
+            </blockquote>
+            <blockquote className="rounded-lg border border-border bg-card p-3 text-xs italic">
+              "Pelayanannya ramah, sabar menjelaskan kebutuhan renovasi rumah saya. Recommended!"
+              <footer className="mt-2 not-italic text-[11px] font-semibold text-foreground">— Ibu Sari, Warga Sawangan</footer>
+            </blockquote>
+          </div>
+        </Section>
+      </>
+    );
+  }
+
+  if (kind === "contractor") {
+    return (
+      <>
+        <Section title="Layanan & Keunggulan">
+          <Bullets items={[
+            "Jasa kontraktor bangunan: rumah tinggal, ruko, & renovasi.",
+            "Desain & pengerjaan interior — konsep modern, fungsional, estetik.",
+            "Tim tukang berpengalaman & pengawasan proyek terkontrol.",
+            "Transparansi RAB dan progres harian.",
+            "Garansi pengerjaan & konsultasi desain gratis.",
+          ]} />
+        </Section>
+        <Section title="Portofolio">
+          <Bullets items={[
+            "Cluster Ruman House — hunian modern siap huni.",
+            "Renovasi rumah tinggal keluarga di Sawangan.",
+            "Interior ruang komersial & retail.",
+            "Pembangunan ruko 2 lantai di Cinangka.",
+          ]} />
+        </Section>
+        <Section title="Testimoni">
+          <blockquote className="rounded-lg border border-border bg-card p-3 text-xs italic">
+            "Hasil pengerjaannya rapi dan sesuai timeline. Tim komunikatif dari awal desain hingga serah terima."
+            <footer className="mt-2 not-italic text-[11px] font-semibold text-foreground">— Bapak Andi, Pemilik Rumah</footer>
+          </blockquote>
+        </Section>
+      </>
+    );
+  }
+
+  // social
+  return (
+    <>
+      <Section title="Ringkasan & Layanan">
+        <p>Layanan sosial pemulasaraan & pemakaman Muslim yang kami sediakan secara gratis dan tulus, meliputi:</p>
+        <div className="mt-3">
+          <Bullets items={[
+            "Pengurusan administrasi",
+            "Ambulans siaga 24 jam",
+            "Pemulasaraan jenazah (sesuai syariat)",
+            "Kafan",
+            "Peti jenazah (jika tersedia)",
+            "Transportasi jenazah",
+            "Pemakaman",
+            "Kremasi (jika memang disediakan)",
+            "Pendampingan keluarga",
+            "Dokumentasi administrasi",
+          ]} />
+        </div>
+      </Section>
+      <Section title="Kenapa Memilih Kami">
+        <Bullets items={[
+          "Gratis — bentuk tanggung jawab sosial perusahaan.",
+          "Pelayanan tulus, cepat, dan sesuai syariat Islam.",
+          "Tim berpengalaman & armada ambulans siaga 24 jam.",
+          "Pendampingan penuh empati untuk keluarga.",
+        ]} />
+      </Section>
+      <Section title="Alur Pelayanan">
+        <ol className="list-decimal space-y-1.5 pl-5">
+          <li>Hubungi kami via WhatsApp / telepon 24 jam.</li>
+          <li>Tim menerima informasi & langsung meluncur dengan ambulans.</li>
+          <li>Pemulasaraan jenazah sesuai syariat di lokasi/rumah duka.</li>
+          <li>Pengantaran ke lokasi pemakaman.</li>
+          <li>Pemakaman & pendampingan keluarga.</li>
+        </ol>
+      </Section>
+    </>
+  );
+}
+
 const portfolio = [
   { img: portfolio1, title: "Cluster Ruman House", category: "Perumahan" },
   { img: portfolio2, title: "TB. Abah Material — Gudang Cinangka", category: "Retail Material" },
