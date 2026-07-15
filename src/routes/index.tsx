@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { MessageCircle, X, HardHat, Palette, Users, ClipboardList, ShieldCheck, Wrench, FileText, Ambulance, HeartHandshake, Package, Truck, MapPin, Camera } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import logoAsset from "@/assets/abahsinergi-logo.asset.json";
 import svcSocial from "@/assets/service-social.jpg";
@@ -173,13 +173,26 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
     return (
       <>
         <Section title="Layanan & Keunggulan">
-          <Bullets items={[
-            "Jasa kontraktor bangunan: rumah tinggal, ruko, & renovasi.",
-            "Desain & pengerjaan interior — konsep modern, fungsional, estetik.",
-            "Tim tukang berpengalaman & pengawasan proyek terkontrol.",
-            "Transparansi RAB dan progres harian.",
-            "Garansi pengerjaan & konsultasi desain gratis.",
-          ]} />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { Icon: HardHat, t: "Jasa Kontraktor", d: "Bangun rumah tinggal, ruko, & renovasi menyeluruh." },
+              { Icon: Palette, t: "Desain Interior", d: "Konsep modern, fungsional, dan estetik sesuai gaya Anda." },
+              { Icon: Users, t: "Tim Berpengalaman", d: "Tukang terlatih dengan pengawasan proyek terkontrol." },
+              { Icon: ClipboardList, t: "Transparansi RAB", d: "Rincian biaya jelas & laporan progres harian." },
+              { Icon: ShieldCheck, t: "Garansi Pengerjaan", d: "Jaminan kualitas hasil kerja untuk ketenangan Anda." },
+              { Icon: Wrench, t: "Konsultasi Gratis", d: "Diskusi desain & kebutuhan proyek tanpa biaya." },
+            ].map(({ Icon, t, d }) => (
+              <div key={t} className="flex gap-3 rounded-lg border border-border bg-secondary/30 p-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
+                  <Icon size={18} />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-foreground">{t}</p>
+                  <p className="mt-0.5 text-xs">{d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </Section>
         <Section title="Portofolio">
           <Bullets items={[
@@ -204,17 +217,27 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
     <>
       <Section title="Ringkasan & Layanan">
         <p>Layanan sosial pemulasaraan & pemakaman Muslim yang kami sediakan secara gratis dan tulus, meliputi:</p>
-        <div className="mt-3">
-          <Bullets items={[
-            "Pengurusan administrasi",
-            "Ambulans siaga 24 jam",
-            "Pemulasaraan jenazah (sesuai syariat)",
-            "Kafan",
-            "Transportasi jenazah",
-            "Pemakaman",
-            "Pendampingan keluarga",
-            "Dokumentasi administrasi",
-          ]} />
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          {[
+            { Icon: FileText, t: "Pengurusan Administrasi", d: "Bantuan dokumen & surat-surat kepengurusan." },
+            { Icon: Ambulance, t: "Ambulans Siaga 24 Jam", d: "Armada siap merespons kapan pun dibutuhkan." },
+            { Icon: HeartHandshake, t: "Pemulasaraan Jenazah", d: "Dimandikan & disholatkan sesuai syariat Islam." },
+            { Icon: Package, t: "Kafan", d: "Perlengkapan kafan disediakan lengkap." },
+            { Icon: Truck, t: "Transportasi Jenazah", d: "Pengantaran menuju lokasi pemakaman." },
+            { Icon: MapPin, t: "Pemakaman", d: "Pendampingan proses pemakaman hingga selesai." },
+            { Icon: Users, t: "Pendampingan Keluarga", d: "Empati & dukungan bagi keluarga yang berduka." },
+            { Icon: Camera, t: "Dokumentasi Administrasi", d: "Pencatatan & dokumentasi seluruh proses." },
+          ].map(({ Icon, t, d }) => (
+            <div key={t} className="flex gap-3 rounded-lg border border-border bg-secondary/30 p-3">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-accent/15 text-accent">
+                <Icon size={18} />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-foreground">{t}</p>
+                <p className="mt-0.5 text-xs">{d}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </Section>
       <Section title="Kenapa Memilih Kami">
