@@ -8,6 +8,15 @@ import svcRetail from "@/assets/service-retail.jpg";
 import svcSocial from "@/assets/service-social.jpg";
 import ambulanceSocial from "@/assets/ambulance-social.jpg.asset.json";
 import tbMaterialCover from "@/assets/tb-material-cover.jpg.asset.json";
+import brandMowilex from "@/assets/brands/mowilex.jpg.asset.json";
+import brandNippon from "@/assets/brands/nippon.jpg.asset.json";
+import brandWavin from "@/assets/brands/wavin.jpg.asset.json";
+import brandBroco from "@/assets/brands/broco.jpg.asset.json";
+import brandTigaRoda from "@/assets/brands/tigaroda.jpg.asset.json";
+import brandJotun from "@/assets/brands/jotun.jpg.asset.json";
+import brandSika from "@/assets/brands/sika.jpg.asset.json";
+import brandSchneider from "@/assets/brands/schneider.jpg.asset.json";
+import brandVinilon from "@/assets/brands/vinilon.jpg.asset.json";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -84,10 +93,15 @@ function Bullets({ items }: { items: string[] }) {
 }
 
 const brandPartners = [
-  { name: "Nippon Paint", logo: "https://logo.clearbit.com/nipponpaint.co.id" },
-  { name: "Pipa Wavin", logo: "https://logo.clearbit.com/wavin.com" },
-  { name: "Semen Tiga Roda", logo: "https://logo.clearbit.com/sementigaroda.com" },
-  { name: "Aquaproof", logo: "https://logo.clearbit.com/aquaproof.co.id" },
+  { name: "Nippon Paint", logo: brandNippon.url },
+  { name: "Mowilex", logo: brandMowilex.url },
+  { name: "Jotun", logo: brandJotun.url },
+  { name: "Semen Tiga Roda", logo: brandTigaRoda.url },
+  { name: "Sika", logo: brandSika.url },
+  { name: "Pipa Wavin", logo: brandWavin.url },
+  { name: "Vinilon", logo: brandVinilon.url },
+  { name: "Broco", logo: brandBroco.url },
+  { name: "Schneider Electric", logo: brandSchneider.url },
 ];
 
 function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social" }) {
@@ -110,10 +124,10 @@ function ServiceDetailBody({ kind }: { kind: "material" | "contractor" | "social
           </div>
         </Section>
         <Section title="Brand Partner">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {brandPartners.map((b) => (
-              <div key={b.name} className="flex flex-col items-center gap-2 rounded-lg border border-border bg-card p-3">
-                <img src={b.logo} alt={b.name} className="h-10 w-auto object-contain" loading="lazy" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+              <div key={b.name} className="flex flex-col items-center justify-center gap-2 rounded-lg border border-border bg-white p-3">
+                <img src={b.logo} alt={b.name} className="h-12 w-full object-contain" loading="lazy" />
                 <span className="text-center text-xs font-semibold text-foreground">{b.name}</span>
               </div>
             ))}
@@ -394,7 +408,7 @@ function Index() {
           onClick={() => setActiveService(null)}
         >
           <div
-            className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-card shadow-2xl"
+            className="relative flex max-h-[92vh] w-full max-w-[95vw] flex-col overflow-hidden rounded-2xl bg-card shadow-2xl sm:max-w-[80vw] lg:max-w-[55vw]"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -405,10 +419,10 @@ function Index() {
             >
               <X size={18} />
             </button>
-            <div className="aspect-[16/9] overflow-hidden">
+            <div className="h-40 shrink-0 overflow-hidden sm:h-56">
               <img src={active.img} alt={active.title} className="h-full w-full object-cover" />
             </div>
-            <div className="max-h-[75vh] overflow-y-auto p-6 sm:p-8">
+            <div className="flex-1 overflow-y-auto p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-accent">Detail Layanan</p>
               <h3 className="mt-2 text-2xl font-black leading-tight">{active.title}</h3>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{active.detail}</p>
