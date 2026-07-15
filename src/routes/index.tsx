@@ -366,7 +366,7 @@ function Index() {
                     <button
                       type="button"
                       onClick={(e) => { e.stopPropagation(); setActiveService(i); }}
-                      className="rounded-md border border-border bg-background px-4 py-2 text-sm font-semibold transition-colors hover:bg-secondary"
+                      className="rounded-md border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
                     >
                       Selengkapnya
                     </button>
@@ -375,7 +375,7 @@ function Index() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                      className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
                     >
                       <MessageCircle size={16} /> WhatsApp
                     </a>
@@ -394,7 +394,7 @@ function Index() {
           onClick={() => setActiveService(null)}
         >
           <div
-            className="relative w-full max-w-lg overflow-hidden rounded-2xl bg-card shadow-2xl"
+            className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-card shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -417,7 +417,7 @@ function Index() {
                 href={waLink(active.waMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                className="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90"
               >
                 <MessageCircle size={18} /> Konsultasi via WhatsApp
               </a>
@@ -520,7 +520,7 @@ function Index() {
                   href={waLink("Halo, saya ingin berkonsultasi mengenai layanan AbahSinergi.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-1 items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-md bg-accent px-5 py-3 text-sm font-bold text-accent-foreground transition-opacity hover:opacity-90"
                 >
                   <MessageCircle size={18} /> Chat WhatsApp
                 </a>
