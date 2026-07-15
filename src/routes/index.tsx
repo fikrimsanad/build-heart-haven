@@ -243,10 +243,11 @@ function Index() {
             <div className="aspect-[16/9] overflow-hidden">
               <img src={active.img} alt={active.title} className="h-full w-full object-cover" />
             </div>
-            <div className="p-6 sm:p-8">
+            <div className="max-h-[75vh] overflow-y-auto p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-accent">Detail Layanan</p>
               <h3 className="mt-2 text-2xl font-black leading-tight">{active.title}</h3>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{active.detail}</p>
+              <ServiceDetailBody kind={active.kind} />
               <a
                 href={waLink(active.waMsg)}
                 target="_blank"
